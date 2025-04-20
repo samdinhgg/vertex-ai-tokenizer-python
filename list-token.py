@@ -44,7 +44,7 @@ for token_id, token_b64 in zip(tokens_info['token_ids'], tokens_info['tokens']):
         except (binascii.Error, UnicodeDecodeError) as e2:
             print(f"Error decoding token {token_b64}: {e} and {e2}")
             token = token_b64  # Use the original base64 string if decoding fails
-    print(f"- {token_id:>8}: {token}")
+    print(f"- {token_id:>8}: '{token}'")
 
 # Example output:
 # tokens_info=[TokensInfo(
