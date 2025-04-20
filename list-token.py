@@ -3,10 +3,16 @@ import base64
 import binascii
 from google import genai
 from google.genai.types import HttpOptions
+from dotenv import load_dotenv
 
-GOOGLE_CLOUD_PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT")
-GOOGLE_CLOUD_LOCATION = os.environ.get("GOOGLE_CLOUD_LOCATION") == "us-central1"
-GOOGLE_GENAI_USE_VERTEXAI = os.environ.get("GOOGLE_GENAI_USE_VERTEXAI") == "True"
+# Check if .env file exists and load it
+if os.path.exists(".env"):
+    load_dotenv()
+else:
+    print("Warning: .env file not found. Using environment variables directly.")
+    GOOGLE_CLOUD_PROJECT = os.environ.get("GOOGLE_CLOUD_PROJECT")
+    GOOGLE_CLOUD_LOCATION = os.environ.get("GOOGLE_CLOUD_LOCATION") == "us-central1"
+    GOOGLE_GENAI_USE_VERTEXAI = os.environ.get("GOOGLE_GENAI_USE_VERTEXAI") == "True"
 
 client = genai.Client(http_options=HttpOptions(api_version="v1"))
 
