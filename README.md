@@ -17,6 +17,14 @@ Prefer to use your Cloud Shell terminal, not the Cloud Shell Editor's terminal. 
 
 ## Examples
 
+- `prompt.txt`
+
+```
+"Nếu biết ngày mai em lấy chồng.
+Anh về cưới vợ thế là xong."
+Đây là bài thơ hay ca dao nào?
+```
+
 - `get-token`:
 
 ![get-token](docs/assets/example-get-token.png)
